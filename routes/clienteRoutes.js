@@ -1,7 +1,7 @@
 const {Router} = require('express')
 const {createClienteController,getAllClienteController,updateClienteByIdController,deletedClienteByIdController}= require('../controllers/clienteControllers')
 const {Cliente} = require ('../models')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 const clienteRouters = Router()
 
 clienteRouters.post("/", async (req, res) => {

@@ -1,5 +1,5 @@
 const Administrador = require('../models/Administrador');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const nodemailer = require('nodemailer');
 
 let codigosRecuperacionEmail = {}; // { email: { codigo, expiracion } }
