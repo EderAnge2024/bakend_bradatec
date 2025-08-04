@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser')
 const server = express()
 
 server.use(cors({
-  origin: 'http://localhost:5173', // 👈 cambia si tu frontend está en otro puerto
+  origin: 'https://pruebabrada.kesug.com', // 👈 cambia si tu frontend está en otro puerto
   credentials: true                // 👈 necesario para que se envíen cookies
 }))
 server.use(morgan('dev'))
