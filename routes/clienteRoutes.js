@@ -62,8 +62,8 @@ clienteRouters.post('/login', async (req, res) => {
         res.cookie('cliente_token', token, {
             httpOnly: true,
             maxAge: 30 * 24 * 60 * 60 * 1000, // 30 días
-            sameSite: 'Lax',
-            secure: process.env.NODE_ENV === 'production'
+            sameSite: 'None',
+            secure: true
         });
 
         return res.status(200).json({
@@ -97,7 +97,10 @@ clienteRouters.post('/logout', async (req, res) => {
         }
 
         // Limpiar cookie
-
+        res.clearCookie('cliente_token', {
+          sameSite: 'None',
+          secure: true
+        });
         res.status(200).json({ mensaje: "Logout exitoso" });
     } catch (error) {
         res.status(500).json({ error: error.message });
